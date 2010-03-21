@@ -52,7 +52,7 @@ if [[ ! -z "$(which ruby 2>/dev/null | awk '/rvm/{print}')" ]] ; then
   fi
 
   if [[ ! -z "$gemset_flag" ]] ; then
-    gemset="$(gem env gemdir | awk -F% '{print $2}')"
+    gemset="$(echo $GEM_HOME | awk -F% '{print $2}')"
     if [[ ! -z "$gemset" ]] ; then gemset="%$gemset" ; fi
   fi
 
